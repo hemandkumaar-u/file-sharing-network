@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="dashboard-layout">
+    <div class="header">
+        <h1>Local Network File Drop</h1>
+        <p>Scan the QR code to drop files instantly to this PC</p>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar with QR -->
+        <div class="panel qr-section">
+            <h2>Connect Mobile</h2>
+            
+            <!-- Network Selector -->
+            <div style="margin-bottom: 15px; width: 100%;">
+                <label for="ipSelector" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; text-align: left;">Network Interface:</label>
+                <select id="ipSelector" style="width: 100%; padding: 8px; border-radius: 8px; background: rgba(0,0,0,0.3); color: white; border: 1px solid var(--border-color); font-family: inherit; font-size: 0.9rem;">
+                    <option>Loading...</option>
+                </select>
+            </div>
+
+            <div class="qr-container" id="qrcode"></div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Or visit this URL manually on your phone:</p>
+            <div class="qr-url" id="qrurl">Loading...</div>
+        </div>
+
+        <!-- Main Gallery -->
+        <div class="panel gallery-section">
+            <h2>
+                Received Files
+                <span class="file-count" id="fileCount">0</span>
+            </h2>
+            <div class="files-grid" id="filesGrid">
+                <div class="empty-state">Loading files...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
